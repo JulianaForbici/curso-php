@@ -41,4 +41,11 @@ $genero = match($nomeFilme) {
 
 echo "\nGenero: " . $genero . "\n";
 
-echo $argc . "\n";
+$filme = [
+    "nome" => "Marty Supreme",
+    "genero" => "ação",
+    "ano" => 2025,
+    "nota" => 8.5,
+];
+
+echo $filme['nome'];
