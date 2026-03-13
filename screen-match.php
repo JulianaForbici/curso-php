@@ -7,17 +7,17 @@ $anoLancamento = 2021;
 
 $anoLancamento = $argv[1] ?? 2022;
 
-$somaDeNotas = 9;
-$somaDeNotas += 8.8;
-$somaDeNotas += 9;
-$somaDeNotas += 7.5;
-$somaDeNotas += 8.7;
+$somaDeNotas = 0;
 
-$notaFilme = $somaDeNotas / 5;
+for($contador = 1; $contador < $argc; $contador += 1) {
+    $somaDeNotas += $argv[$contador];
+}
+
+$quantidadesNotas = $argc - 1;
+$notaFilme = $somaDeNotas / $quantidadesNotas;
+
 $incluindoFilmeNoPlano = true;
-
 $planoPrime = true;
-
 $incluindoFilmeNoPlano = $planoPrime || $anoLancamento >= 2020;
 
 echo "Nome do filme: " . $nomeFilme . "\n";
