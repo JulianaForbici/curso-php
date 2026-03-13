@@ -3,36 +3,37 @@
 echo "Bem-vindo ao screen match!\n";
 
 $nomeFilme = "Paprika";
-$anoLancamento = 2021;
+$anoLancamento = $argv[1] ?? 2006;
 
-$anoLancamento = $argv[1] ?? 2022;
+$notas = [];
 
-$somaDeNotas = 0;
-
-for($contador = 1; $contador < $argc; $contador += 1) {
-    $somaDeNotas += $argv[$contador];
+for ($contador = 2; $contador < $argc; $contador++) {
+    $notas[] = (float) $argv[$contador];
 }
 
-$quantidadesNotas = $argc - 1;
-$notaFilme = $somaDeNotas / $quantidadesNotas;
+if (count($notas) === 0) {
+    $notas = [8.7, 9.8, 9.0];
+}
 
-$incluindoFilmeNoPlano = true;
+$quantidadesNotas = count($notas);
+$notaFilme = $quantidadesNotas > 0 ? array_sum($notas) / $quantidadesNotas : 0;
+
 $planoPrime = true;
 $incluindoFilmeNoPlano = $planoPrime || $anoLancamento >= 2020;
 
 echo "Nome do filme: " . $nomeFilme . "\n";
-echo "Nota do filme: $notaFilme\n";
-echo "Ano de lançamento: $anoLancamento\n";
+echo "Nota do filme: " . $notaFilme . "\n";
+echo "Ano de lançamento: " . $anoLancamento . "\n";
 
-if($anoLancamento > 2025){
+if ($anoLancamento >= 2025) {
     echo "Filme novo";
-} else if($anoLancamento < 2025 && $anoLancamento >= 2022){
+} elseif ($anoLancamento >= 2022) {
     echo "Filme meio velho";
 } else {
     echo "Filme velho demais";
 }
 
-$genero = match($nomeFilme) {
+$genero = match ($nomeFilme) {
     "Marty Supreme" => "ação",
     "Past Lives" => "drama",
     "Paprika" => "suspense",
@@ -42,9 +43,9 @@ $genero = match($nomeFilme) {
 echo "\nGenero: " . $genero . "\n";
 
 $filme = [
-    "nome" => "Marty Supreme",
-    "genero" => "ação",
-    "ano" => 2025,
+    "nome" => "Paprika",
+    "genero" => "suspense",
+    "ano" => 2006,
     "nota" => 8.5,
 ];
 
