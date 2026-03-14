@@ -1,4 +1,4 @@
-# curso-php# Projeto PHP - Estudos
+# Projeto PHP - Estudos
 
 Projeto desenvolvido para praticar lógica de programação, sintaxe da linguagem PHP e conceitos básicos de desenvolvimento back-end.
 
