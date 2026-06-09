@@ -27,5 +27,5 @@ function times(y) {
 function dividedBy(y) {
     return function (x) {
         return Math.floor(x / y);
-    };
+    }
 }
