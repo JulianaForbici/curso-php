@@ -14,4 +14,5 @@ file_put_contents(
     json_encode($filme, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
 );
 
-echo "Filme exportado com sucesso!";
+header('Location: sucesso.php');
+exit;
